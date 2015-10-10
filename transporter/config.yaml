@@ -1,8 +1,8 @@
 nodes:
   mongo:
     type: mongo
-    uri: mongodb://mongo1/harvester-test
-    namespace: harvester-test.entries
+    uri: mongodb://mongo1/opentown
+    namespace: opentown./^(users|topics)$/
     debug: true
   es:
     type: elasticsearch

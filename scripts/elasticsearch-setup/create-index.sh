@@ -1,7 +1,4 @@
 #! /bin/bash
-
-INDEX_NAME=opentown
-
 #
 # warning: clean the index.
 #
@@ -37,7 +34,7 @@ curl -XPUT ${ES}:9200/${INDEX_NAME} -d '
 # 
 # what's the strategy to search phone field?
 #
-curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/user -d '
+curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/users -d '
 {
     "user":{
         "properties":{
@@ -61,7 +58,7 @@ curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/user -d '
 }'
 
 
-curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/topic -d '
+curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/topics -d '
 {
     "topic":{
         "properties":{

@@ -20,15 +20,19 @@ EOF
 
 
 echo "================================="
-echo "Fetching data from Mongo"
-echo curl http://${MONGODB1}:28017/harvester-test/entries/?limit=10
-curl http://${MONGODB1}:28017/harvester-test/entries/?limit=10
+echo "Fetching data from Mongo opentown's users"
+echo curl http://${MONGODB1}:28017/opentown/users/?limit=10
+curl http://${MONGODB1}:28017/opentown/users/?limit=10
+
+echo "Fetching data from Mongo opentown's topics"
+echo curl http://${MONGODB1}:28017/opentown/topics/?limit=10
+curl http://${MONGODB1}:28017/opentown/topics/?limit=10
 echo "================================="
 
 
 printf "\nReading from Elasticsearch (waiting for the transporter to start)\n\n"
 sleep 40
-curl -XGET "http://${ES}:9200/harvester-test/_search?pretty&q=*:*"
+curl -XGET "http://${ES}:9200/opentown/_search?pretty&q=*:*"
 
 
 echo "================================="
