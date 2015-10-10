@@ -2,6 +2,10 @@
 #
 # warning: clean the index.
 #
+
+ES=`ping -c 1 elasticsearch | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
+INDEX_NAME=opentown
+
 curl -XDELETE ${ES}:9200/${INDEX_NAME}
 
 curl -XPUT ${ES}:9200/${INDEX_NAME} -d '

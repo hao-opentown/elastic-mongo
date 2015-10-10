@@ -12,10 +12,10 @@ ES=`ping -c 1 elasticsearch | head -1  | cut -d "(" -f 2 | cut -d ")" -f 1`
 echo "================================="
 echo "Writing to MongoDB"
 mongo ${MONGODB1} <<EOF
-  use harvester-test
+  use opentown
   rs.config()
-  var p = {title: "Breaking news", content: "It's not summer yet."}
-  db.entries.save(p)
+  var p = {nickname: "haozi", phone: "18612341234", intro : "wardering."}
+  db.users.save(p)
 EOF
 
 
