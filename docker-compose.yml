@@ -30,7 +30,7 @@ mongo1:
 
 elasticsearch:
   hostname: elasticsearch
-  image: stabenfeldt/elasticsearch-marvel
+  image: wangzhihao/elasticsearch-opentown
   ports:
     - "9200:9200"
     - "9300:9300"
