@@ -40,7 +40,7 @@ curl -XPUT ${ES}:9200/${INDEX_NAME} -d '
 #
 curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/users -d '
 {
-    "user":{
+    "users":{
         "properties":{
             "nickname":{
                 "type":"string",
@@ -58,13 +58,12 @@ curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/users -d '
             }
         }
     }
-    
 }'
 
 
 curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/topics -d '
 {
-    "topic":{
+    "topics":{
         "properties":{
             "title":{
                 "type":"string",
@@ -74,12 +73,14 @@ curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/topics -d '
                 "type":"string",
                 "analyzer":"jieba_index"
             },
-            "statements":[
-                {
-                    "type":"string",
-                    "analyzer":"jieba_index"
+            "statements":{
+                "properties":{
+                    "content" : {
+                        "type":"string",
+                        "analyzer":"jieba_index"
+                    }
                 }
-            ],
+            },
             "deleted" : {
                 "type" : "integer"
             }
