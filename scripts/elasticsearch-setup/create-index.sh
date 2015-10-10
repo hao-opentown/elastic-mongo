@@ -54,7 +54,7 @@ curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/users -d '
                 "type":"string"
             },
             "deleted" : {
-                "type" : "integer"
+                "type" : "boolean"
             }
         }
     }
@@ -82,7 +82,7 @@ curl -XPUT ${ES}:9200/${INDEX_NAME}/_mapping/topics -d '
                 }
             },
             "deleted" : {
-                "type" : "integer"
+                "type" : "boolean"
             }
         }
     }
