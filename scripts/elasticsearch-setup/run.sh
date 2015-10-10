@@ -10,8 +10,8 @@ done
 
 echo "Done waiting!"
 
-curl -XPUT ${ES}:9200/_cluster/settings -d '{
-    "transient" : {
-        "cluster.routing.allocation.disk.threshold_enabled" : false
-    }
-}'
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+$DIR/disable-disk-treshold.sh
+
+$DIR/create-index.sh
