@@ -1,6 +1,10 @@
 # Elastic Mongo
 **Docker setup to get Elasticsearch and MongoDB up and running**
 
+## 针对opentown的一些个性化
+
+* 建立indexes mapping（例如users，topics等）
+* 加入中文分词支持
 
 
 ### Install Docker and docker-compose
