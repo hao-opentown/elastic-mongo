@@ -30,7 +30,8 @@ mongo1:
 
 elasticsearch:
   hostname: elasticsearch
-  image: wangzhihao/elasticsearch-opentown
+  # see https://docs.docker.com/compose/compose-file/ for build command
+  build: ./elasticsearch
   ports:
     - "9200:9200"
     - "9300:9300"
